@@ -1,2 +1,2 @@
 web: vendor/bin/heroku-php-apache2 public/
-release: php artisan migrate:fresh && php artisan db:seed RoleSeeder
+release: php artisan migrate:fresh --seed
