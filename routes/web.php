@@ -24,11 +24,12 @@ Route::get('/dashboard', function () {
 
 
 
-Route::middleware(["isAdmin"])->group(function () {
-    Route::get('/', [MainController::class,"accueil"])->name("accueil");
+// Route::middleware(["isAdmin"])->group(function () {
+//     Route::get('/', [MainController::class,"accueil"])->name("accueil");
+//     Route::resource("produits",ProduitController::class);
+// });
+Route::get('/', [MainController::class,"accueil"])->name("accueil");
     Route::resource("produits",ProduitController::class);
-});
-
 Route::get('list-produits',[ProduitController::class,"index"]);
 
 Route::get('ajouter-produit',[MainController::class,"ajouterProduit"]);
